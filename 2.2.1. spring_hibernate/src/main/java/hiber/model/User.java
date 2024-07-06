@@ -9,6 +9,9 @@ public class User {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+   @OneToOne
+   @JoinColumn
+   private Car car;
 
    @Column(name = "name")
    private String firstName;
@@ -57,5 +60,8 @@ public class User {
 
    public void setEmail(String email) {
       this.email = email;
+   }
+   public void setCar(Car car) {
+      this.car = car;
    }
 }
